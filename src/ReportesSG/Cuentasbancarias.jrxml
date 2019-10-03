@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3ef66c4a-1e7d-4361-b9a0-8b38755324ec">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT Nombre,Numero,Tipo,SaldoInicial,SaldoActual FROM  cuentas]]>
+	</queryString>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Numero" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SaldoInicial" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SaldoActual" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="2" width="571" height="74" uuid="f62f1b48-eca2-445f-bcef-ae61b3ae2034"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="107" y="2" width="398" height="21" uuid="57a055c7-e4db-4ac4-a0ea-c47dd46e3b22"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SUBASTA GANADERA VERAGUENSE, S.A.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="9" width="55" height="43" uuid="e5386b6b-129f-4c11-b064-b621c1ea2542"/>
+				<imageExpression><![CDATA["C:\\SG-SOFT\\imagen\\photo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="211" y="29" width="149" height="20" uuid="cbebd8c2-970d-4982-8f95-fee0b529dfe3"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[LISTADO DE CUENTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="58" width="176" height="20" uuid="20af256c-46b6-4be3-aabb-3130f127a4d5"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vía Carretera Panamericana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="33" width="131" height="20" uuid="2ce704d5-8e06-4394-8849-80f719936f52"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono: 959-0112]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="373" y="58" width="198" height="20" uuid="741d5690-349c-448f-adfd-cc4f6839dbc1"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Ing. Maximino Cedeño: 6676-5918]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="9" width="100" height="20" uuid="b7aa30fa-2388-4a6a-bd6c-c118e73758da"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="177" y="9" width="100" height="20" uuid="4e836713-bb35-4e84-b091-0a5c93a25f64"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="9" width="61" height="20" uuid="09eccc0c-c90c-4397-bae3-e51abef79f63"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="9" width="72" height="20" uuid="00ae6517-f497-4142-a33d-0480ac7d5d1d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saldo Inicial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="471" y="9" width="63" height="20" uuid="a94af59e-3862-45a7-a83e-02be35a37af6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saldo Actual]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="31" width="571" height="2" uuid="60d90a1a-45c7-482d-ab1f-136f47fb9a84"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="7" y="6" width="155" height="20" uuid="6bb199fa-3886-4dc8-8c34-6a594cfb18bb"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="6" width="100" height="20" uuid="5704f109-0030-4b50-a2e6-ebff2fa45ebd"/>
+				<textFieldExpression><![CDATA[$F{Numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="6" width="61" height="20" uuid="c2234c61-0346-4714-83be-985f81d287db"/>
+				<textFieldExpression><![CDATA[$F{Tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="6" width="84" height="20" uuid="5ce29460-9702-4cdc-8f91-15e5abc7c46b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SaldoInicial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="469" y="6" width="100" height="20" uuid="98cb3c2a-2bfa-4a76-a193-46c0205a163e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SaldoActual}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="-34" width="571" height="2" uuid="f0b99990-9b2b-4765-94ec-efa77eaad382"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="534" y="1" width="34" height="20" uuid="90f85410-c329-4a95-bd3e-7e8a497eb62b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

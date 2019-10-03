@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="882b1d00-a34c-47b6-a63d-f676a9df2230">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="15"/>
+	<parameter name="machos" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="hembras" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="vacas" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="toros" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="novillas" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="novillos" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="terneros" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="terneras" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="equinos" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechainicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechafin" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="totalreses" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="totalventa" class="java.lang.Double">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="totalbruto" class="java.lang.Double">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="totalcomision" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="1" y="0" width="572" height="74" uuid="1dc1c092-1544-44b0-a7c0-c06f4dacc0b2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="102" y="0" width="398" height="21" uuid="8622a8b6-bf26-45f2-9dcb-946b23f5232d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SUBASTA GANADERA VERAGUENSE, S.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="21" width="164" height="20" uuid="788450b1-2c8a-43c9-95a0-3b647ef5da57"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vía Carretera Panamericana]]></text>
+			</staticText>
+			<image>
+				<reportElement x="16" y="5" width="55" height="43" uuid="94031576-f775-4817-8817-b50cfa7a9110"/>
+				<imageExpression><![CDATA["C:\\SG-SOFT\\imagen\\photo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="89" y="48" width="131" height="20" uuid="4ddc8545-5cfb-4a19-8153-5c9f3cd85b79"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono: 959-0112]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="48" width="198" height="20" uuid="fd6dd31f-dec2-4f88-9612-68164b6aa37b"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Ing. Maximino Cedeño: 6676-5918]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="71" y="8" width="196" height="20" uuid="146c47fa-2fd0-423e-9a4d-a919a2f487cb"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Resumen de compras por fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="267" y="8" width="72" height="20" uuid="649e2d2a-400f-4c27-9614-0ee251114bb3"/>
+				<textFieldExpression><![CDATA[$P{fechainicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="341" y="8" width="12" height="20" uuid="88445abe-db10-466e-a7ce-f080a4f928cc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[al]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="356" y="8" width="100" height="20" uuid="4058d7ea-a500-409f-9e9c-958ae89ada98"/>
+				<textFieldExpression><![CDATA[$P{fechafin}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="175" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="384" y="14" width="188" height="87" uuid="4c38812f-45f3-4537-8480-68b0547505de"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="18" y="14" width="355" height="87" uuid="40b11c0b-4ffc-43a4-8e85-7282a3d8954b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="44" y="29" width="45" height="20" uuid="8f3d8e5a-9ac3-4e26-9fa7-ae6fc8b1eb3c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="31" y="62" width="76" height="20" uuid="85fd499d-0d50-4bb2-990c-292e27099e99"/>
+				<textFieldExpression><![CDATA[$P{totalreses}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="176" y="29" width="45" height="20" uuid="f4cf08b5-ecfd-4959-8132-dcf0f967f603"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MACHOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="62" width="70" height="20" uuid="ce12ffe6-4233-4aec-96ff-79ade6af882f"/>
+				<textFieldExpression><![CDATA[$P{machos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="297" y="30" width="54" height="20" uuid="fe55c7b5-9593-4aae-a25f-9690a9ecd529"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HEMBRAS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="295" y="62" width="67" height="20" uuid="1ad6d93f-3be7-436f-97cd-e4560072b2b0"/>
+				<textFieldExpression><![CDATA[$P{hembras}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="13" y="133" width="541" height="1" uuid="16e9da12-4236-4c23-8732-b42258cc819c"/>
+			</line>
+			<staticText>
+				<reportElement x="18" y="114" width="53" height="20" uuid="e3048291-c716-4994-b9ff-b2d1d7ef0101"/>
+				<text><![CDATA[VACAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="114" width="53" height="20" uuid="abdca37c-4459-49c1-803b-237449078e42"/>
+				<text><![CDATA[TOROS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="114" width="53" height="20" uuid="694d4dc4-07e5-46d6-9198-79e1480558cf"/>
+				<text><![CDATA[NOVILLAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="113" width="53" height="20" uuid="be9d8f1a-8947-4920-a290-a91a74e214db"/>
+				<text><![CDATA[NOVILLOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="113" width="70" height="20" uuid="108a9ff7-0734-4b56-bf42-12c152cf0791"/>
+				<text><![CDATA[TERNEROS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="113" width="64" height="20" uuid="486cc16f-4952-45ea-98e8-1e89e5c57861"/>
+				<text><![CDATA[TERNERAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="113" width="64" height="20" uuid="9f14b907-a595-404a-b3ec-a8da02b484a7"/>
+				<text><![CDATA[EQUINOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="18" y="144" width="53" height="20" uuid="0a01525a-fe17-4220-8e99-b2ead751bc87"/>
+				<textFieldExpression><![CDATA[$P{vacas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="144" width="47" height="20" uuid="5b56126e-06ac-4bbd-87d6-6e6fa17ebedc"/>
+				<textFieldExpression><![CDATA[$P{toros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="165" y="144" width="55" height="20" uuid="fbaa0477-6be4-48e2-9974-6bf14d4066a1"/>
+				<textFieldExpression><![CDATA[$P{novillas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="144" width="62" height="20" uuid="e69e8ab0-74ee-4135-8ce9-b75b2f42ed4f"/>
+				<textFieldExpression><![CDATA[$P{novillos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="144" width="70" height="20" uuid="a7ae2846-bbc2-4d1f-ac29-3ef381193752"/>
+				<textFieldExpression><![CDATA[$P{terneros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="144" width="64" height="20" uuid="656988e2-54c5-4f0e-8fb4-bc6b3aeab1bf"/>
+				<textFieldExpression><![CDATA[$P{terneras}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="144" width="64" height="20" uuid="aecfe2b7-b4ce-4910-be41-f90a11edd858"/>
+				<textFieldExpression><![CDATA[$P{equinos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="403" y="76" width="41" height="20" uuid="a818425c-0dd7-4619-9897-63c35b61641b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="456" y="77" width="70" height="20" uuid="f05c397b-4b87-45ea-954a-f3329c84155f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalventa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="391" y="14" width="83" height="20" uuid="7622e1b6-2136-40aa-860a-e1a53f60a262"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL BRUTO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="474" y="14" width="98" height="20" uuid="0afb7fc5-f45c-4d0a-945e-f35a2cbce7e7"/>
+				<textFieldExpression><![CDATA[$P{totalbruto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="391" y="42" width="65" height="20" uuid="0c74f348-684a-47ba-be9b-2bdfb8112aa9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMISION:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="467" y="42" width="100" height="20" uuid="38243133-1859-4861-8aa1-105348e7a79f"/>
+				<textFieldExpression><![CDATA[$P{totalcomision}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="390" y="70" width="177" height="1" uuid="9792e0f3-abe5-4e53-9447-4a6ae6a9fed5"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="29" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="33" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="32" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95aeab74-bf81-435f-bfb3-b2364640b880">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Fecha" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select Distinct c.idClientes, c.Nombre, c.Apellido, c.Cedula, c.Direccion from clientes c, entrada_detalle e where c.idClientes=e.idComprador and e.Fecha=$P{Fecha}]]>
+	</queryString>
+	<field name="idClientes" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cedula" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="164" y="49" width="236" height="20" uuid="010a2a3b-13f8-405c-80fd-e10b7b75bbcb"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Lista de Compradores del dia de Hoy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="28" width="214" height="20" uuid="c0b03f10-2226-4302-a468-3a56e2c1591f"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Ing. Maximino Cedeño: 6676-5918]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="28" width="176" height="20" uuid="3f6920c4-57e5-4923-b9d3-050125f58b6d"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vía Carretera Panamericana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="28" width="131" height="20" uuid="a50548a1-381b-4ace-be42-04f8045a6a96"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono: 959-0112]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="5" width="449" height="33" uuid="15849247-a01e-4d34-948e-6030c3c89c49"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SUBASTA GANADERA VERAGUENSE, S.A.]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="0" width="572" height="74" uuid="df47d5ef-8794-4db5-8992-33859351706b"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="14" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="2" width="572" height="31" backcolor="#CCCCCC" uuid="a3e7dba6-ed81-4ed5-b1b5-eeddbd1aa144"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="8" width="64" height="20" uuid="93adebda-e389-47f0-adfe-f57f852b94f1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IDCliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="317" y="8" width="83" height="20" uuid="ed90f626-5b9e-4aea-a54c-9442f2085fa9"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cedula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="8" width="78" height="20" uuid="eb381d3c-afaa-495b-98f7-b666f5f2746f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="8" width="74" height="20" uuid="e2a8f793-de4f-424f-ab6b-5894d061f934"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="8" width="100" height="20" uuid="2f8576ce-a736-4692-ab41-08b2d4f8988d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="64" height="20" uuid="3f6c0e8c-7b95-4bbe-bba4-baadcc8cf570"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{idClientes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="0" width="100" height="20" uuid="325cf36f-c6e2-4954-bea4-0357db2ea2f8"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="204" y="0" width="100" height="20" uuid="d7b86dfe-00d3-4528-bfc5-7c10c90af21a"/>
+				<textFieldExpression><![CDATA[$F{Apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="317" y="0" width="83" height="20" uuid="6e853747-5154-454e-a8dd-4e28b94cd221"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="0" width="136" height="20" uuid="38de1f44-6cca-423f-ba7a-29d89f7424be"/>
+				<textFieldExpression><![CDATA[$F{Direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="20" forecolor="#000000" backcolor="#CCCCCC" uuid="e795b4b0-4748-419f-bd38-2aaeb8397c08"/>
+			</rectangle>
+			<textField>
+				<reportElement x="472" y="4" width="100" height="20" uuid="a52482b3-2d29-435c-b3ca-22f3066e2070"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="4" width="100" height="20" uuid="e7f95f13-6602-4c5f-be6e-b027be92ca64"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Pagina:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

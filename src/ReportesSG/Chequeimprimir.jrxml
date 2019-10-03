@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="526" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9af61e50-7395-4794-ab99-771ddbaf7e8b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ncheque" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select Beneficiario,Monto,montoletras,observacion,a1,a2,a3,a4,m1,m2,d1,d2 from cheques where Numero=$P{ncheque};]]>
+	</queryString>
+	<field name="Beneficiario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Monto" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="montoletras" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="a1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="a2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="a3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="a4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="m1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="m2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="d1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="d2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="477" y="42" width="13" height="20" uuid="9083988c-2437-4a65-87c1-e75bdf408aa7"/>
+				<textFieldExpression><![CDATA[$F{a1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="494" y="42" width="13" height="20" uuid="65bca494-538b-4865-9479-20e707b644dc"/>
+				<textFieldExpression><![CDATA[$F{a2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="510" y="42" width="15" height="20" uuid="b2eb6d8c-6ff1-4a0f-959d-c534748677ab"/>
+				<textFieldExpression><![CDATA[$F{a3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="527" y="42" width="14" height="20" uuid="5a243436-a643-4191-ad3e-28626f61efad"/>
+				<textFieldExpression><![CDATA[$F{a4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="42" width="15" height="20" uuid="739539b3-e1c8-46c6-9185-ae94cf793358"/>
+				<textFieldExpression><![CDATA[$F{m1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="461" y="42" width="14" height="20" uuid="3c4213ec-0b27-4ec2-83a5-76dad17ad57e"/>
+				<textFieldExpression><![CDATA[$F{m2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="42" width="15" height="20" uuid="b3a88e2b-557e-4cb5-87f7-3a08abc3967f"/>
+				<textFieldExpression><![CDATA[$F{d1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="42" width="12" height="20" uuid="3b10f669-a2fe-4106-b13b-f5f85e992783"/>
+				<textFieldExpression><![CDATA[$F{d2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<textField pattern="#,##0.00">
+				<reportElement x="452" y="19" width="78" height="20" uuid="d163bbc3-d2ad-4f0c-afaa-ad066dd3e7d0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Monto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="3" width="294" height="20" uuid="76edb30b-b7cb-4343-aa2b-713f9712ee8d"/>
+				<textFieldExpression><![CDATA[$F{Beneficiario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="81" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="-32" width="338" height="20" uuid="f9dc8751-7e27-4ea3-b25f-220a1c578c47"/>
+				<textFieldExpression><![CDATA[$F{montoletras}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="109" y="81" width="409" height="44" uuid="60cc092d-8d62-4cfe-99f6-a724d92ef7d6"/>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{observacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

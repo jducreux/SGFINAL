@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="730ec7d1-f9ef-464c-adf7-5f0ba41d79a1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nrecibo" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM recibos where Codigo=$P{nrecibo};]]>
+	</queryString>
+	<field name="idRecibos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Codigo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CodCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NombreCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MontoTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Detalle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fecha" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MontoLetras" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MontoEfectivo" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MontoCheque" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NumeroCh" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BancoCh" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MontoTarjeta" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SaldoActual" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="6" width="100" height="20" uuid="42e1f335-e04a-4efb-b078-4c2c89bda34a"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="6" width="100" height="20" uuid="bcfefd78-9c79-439d-bc02-6f8f4380fedb"/>
+				<textFieldExpression><![CDATA[$F{MontoTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="444" y="15" width="100" height="20" uuid="86425c7a-f610-47bc-ab0c-a8574bdf93e8"/>
+				<textFieldExpression><![CDATA[$F{CodCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="15" width="331" height="20" uuid="02015050-8deb-4977-84b6-eebd242118dc"/>
+				<textFieldExpression><![CDATA[$F{NombreCliente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="131" splitType="Stretch">
+			<textField>
+				<reportElement x="41" y="0" width="382" height="20" uuid="c44561c1-2e07-4eba-b35d-75fb932bb04c"/>
+				<textFieldExpression><![CDATA[$F{MontoLetras}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="20" width="382" height="48" uuid="ec00c7ba-9f8c-462e-adf5-9ead35475713"/>
+				<textFieldExpression><![CDATA[$F{Detalle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="23" y="68" width="100" height="20" uuid="26919fc9-4a2c-4ff9-9400-d31bc7bf063a"/>
+				<textFieldExpression><![CDATA[$F{MontoEfectivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="68" width="100" height="20" uuid="cd038da7-e050-410f-882a-aa9ae387216e"/>
+				<textFieldExpression><![CDATA[$F{MontoCheque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="68" width="100" height="20" uuid="70c01290-636d-4e16-9ed0-62e28110d33e"/>
+				<textFieldExpression><![CDATA[$F{NumeroCh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="68" width="100" height="20" uuid="8407f099-a325-4beb-b6bf-a65bf7010d6e"/>
+				<textFieldExpression><![CDATA[$F{BancoCh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="68" width="100" height="20" uuid="f8a470ed-480f-446a-ae95-867e77c9f670"/>
+				<textFieldExpression><![CDATA[$F{MontoTarjeta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="23" y="101" width="100" height="20" uuid="f960f030-c146-479a-8eaa-65b11d52ea21"/>
+				<textFieldExpression><![CDATA[$F{SaldoActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

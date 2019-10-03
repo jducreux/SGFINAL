@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9ecaef73-56ef-4e15-bfaa-ec3bc57c97df">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fechainicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechafin" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select Fecha,idAnimal,CodVendedor,Tipo,Color,Sexo,Ferrete,ferre2 from entrada_detalle where Fecha between $P{fechainicio} and $P{fechafin} order by Fecha asc;]]>
+	</queryString>
+	<field name="Fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idAnimal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CodVendedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Color" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ferrete" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ferre2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="idAnimal_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{idAnimal}]]></variableExpression>
+	</variable>
+	<variable name="Sexo_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{Sexo}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="-1" y="0" width="572" height="77" uuid="4714f41a-51c6-4e4e-8c2c-5d71688dc28c"/>
+			</rectangle>
+			<textField>
+				<reportElement x="201" y="57" width="70" height="20" uuid="218ab215-3a14-4b88-ae8d-34b353bc4204"/>
+				<textFieldExpression><![CDATA[$P{fechainicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="57" width="100" height="20" uuid="280fdd6b-3ad2-44c2-9b40-2ae6f20c858c"/>
+				<textFieldExpression><![CDATA[$P{fechafin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="248" y="33" width="115" height="20" uuid="3d04d8bd-e7b2-4148-967b-42fdcea5af2d"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono: 959-0112]]></text>
+			</staticText>
+			<image>
+				<reportElement x="6" y="13" width="55" height="43" uuid="ac0f5f04-c780-4c76-8545-30dbd5129fdc"/>
+				<imageExpression><![CDATA["C:\\SG-SOFT\\imagen\\photo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="274" y="57" width="12" height="20" uuid="483ab803-fd2e-4381-baa9-4a93b9eaa89d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Al]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="8" width="398" height="21" uuid="7aae19a1-4357-4c35-98a7-5d59ce10b4bd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SUBASTA GANADERA VERAGUENSE, S.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="33" width="176" height="20" uuid="c3d5ff91-3cad-40da-b4bf-2e47892a78b5"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vía Carretera Panamericana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="373" y="33" width="198" height="20" uuid="0efe52cc-94e7-4977-9ccc-d61849b5d26e"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Ing. Maximino Cedeño: 6676-5918]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="56" width="129" height="20" uuid="e2d99a41-af41-4680-ade6-762319f4e350"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Listado De Entradas:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="6" width="570" height="20" backcolor="#CCCCCC" uuid="f6b7892d-805a-4c01-bb75-0d6591ce75cd"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="5" y="8" width="45" height="20" uuid="7f523d96-63a6-43f9-8dfc-a1d7efd34884"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="8" width="53" height="20" uuid="0ca8e66a-273b-4da2-bd10-680e78864274"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[idAnimal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="8" width="78" height="20" uuid="414a7ca5-c9f0-4fad-a29c-18d5fda6d8cb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CodVendedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="232" y="8" width="60" height="20" uuid="3b66cc58-b330-4d81-8f8d-e31653a55306"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Color]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="8" width="51" height="20" uuid="17e13add-b1b6-4803-86cb-8e72ceb4ad87"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="461" y="8" width="100" height="20" uuid="7ddae079-1408-4eb8-9d02-2ee1fb7530c1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ferretes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="8" width="54" height="20" uuid="5787e6e8-b18d-4933-b25f-49931febbaa0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="2" y="0" width="56" height="20" uuid="f5e8cde1-c587-416f-9741-847403cebd32"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="0" width="47" height="20" uuid="b4381126-8ac5-4edf-9baa-d74767aff1c0"/>
+				<textFieldExpression><![CDATA[$F{idAnimal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="0" width="78" height="20" uuid="adddbcb7-dae6-4450-80bb-ba995c253500"/>
+				<textFieldExpression><![CDATA[$F{CodVendedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="59" height="20" uuid="8134803a-237b-4de2-98a8-63b4533c5898"/>
+				<textFieldExpression><![CDATA[$F{Color}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="0" width="61" height="20" uuid="cccdb682-fc26-41ee-911c-e14dcedd5e6a"/>
+				<textFieldExpression><![CDATA[$F{Sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="0" width="55" height="20" uuid="e4aed702-e533-41db-92e8-329cec90c02e"/>
+				<textFieldExpression><![CDATA[$F{Ferrete}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="515" y="0" width="49" height="20" uuid="938a4b4f-bc3e-42a6-8d85-a819deb8ed10"/>
+				<textFieldExpression><![CDATA[$F{ferre2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="373" y="0" width="64" height="20" uuid="3767c304-3b5d-4494-9b65-9ff73cc3e857"/>
+				<textFieldExpression><![CDATA[$F{Tipo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="6" y="3" width="98" height="20" uuid="9ca1d805-b052-43a0-aa1f-35f35f6a02e3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total De Animales :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="104" y="3" width="86" height="20" uuid="e52bcab1-11b6-4f42-9111-395c72a89c11"/>
+				<textFieldExpression><![CDATA[$V{idAnimal_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="471" y="2" width="100" height="20" uuid="7ac28508-d172-4587-9665-446ae28a0453"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="25" splitType="Stretch"/>
+	</summary>
+</jasperReport>

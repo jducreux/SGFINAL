@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="43e68c36-1928-4e1b-87fe-1eb00ae62aae">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT idProveedor,Nombre,Ruc,Telefono1,Telefono2,Email,Direccion FROM proveedor order by idProveedor]]>
+	</queryString>
+	<field name="idProveedor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ruc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefono1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefono2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="idProveedor_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{idProveedor}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="2" y="0" width="748" height="74" uuid="7329bbb3-63c6-497b-9a15-11069ed02d57"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="107" y="0" width="626" height="33" uuid="3e3ed50f-fda7-4839-bdb4-905531d2a594"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SUBASTA GANADERA VERAGUENSE, S.A.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="20" y="0" width="55" height="43" uuid="4c871407-1558-49fc-a3ba-6a0ef4a6d10a"/>
+				<imageExpression><![CDATA["C:\\SG-SOFT\\imagen\\photo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="20" y="59" width="176" height="20" uuid="3b26df33-42f4-4aab-87a8-1401df91eb5d"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vía Carretera Panamericana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="33" width="199" height="20" uuid="e22553aa-947e-4eca-a7e7-efa2050799af"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[LISTADO DE PROVEEDORES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="602" y="33" width="131" height="20" uuid="ea513736-3a25-4c59-bddf-492264111749"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono: 959-0112]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="538" y="59" width="214" height="20" uuid="a0613a01-6ea7-493f-9548-dfedfdb6065e"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Ing. Maximino Cedeño: 6676-5918]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="29" width="749" height="2" uuid="cc98d63b-6848-4b4f-8c8e-b224379ebfef"/>
+			</line>
+			<line>
+				<reportElement x="3" y="3" width="749" height="2" uuid="f1634629-cf4e-4f5b-8d90-8e314fb7598a"/>
+			</line>
+			<staticText>
+				<reportElement x="3" y="5" width="84" height="20" uuid="f2ad451b-5369-4622-b301-950f0278ae7a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[idProveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="5" width="58" height="20" uuid="416e5625-08af-4b87-959b-b2001ba5d70b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="7" width="75" height="20" uuid="e91ded09-79ce-4c07-92f2-a8d7b9484b04"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ruc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="7" width="100" height="20" uuid="7e019171-4cbb-4446-9fa8-1f600ad5df93"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefonos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="461" y="7" width="41" height="20" uuid="6c042934-ca6c-4fb3-9298-4dad5d3a56a9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="573" y="5" width="100" height="20" uuid="62426bae-62b3-4286-80fa-6191ef8d81a2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="0" width="62" height="20" uuid="c70b4560-9682-455a-88c2-da3e2493abda"/>
+				<textFieldExpression><![CDATA[$F{idProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="0" width="121" height="20" uuid="3c1cec0a-8dc9-4bd0-bfc3-5e33142bc1e8"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="213" y="0" width="92" height="20" uuid="87eda5b2-13f9-4b5e-a1ab-dc70d84758fc"/>
+				<textFieldExpression><![CDATA[$F{Ruc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="0" width="66" height="20" uuid="cdf0d56c-1300-4568-a886-f3164457606e"/>
+				<textFieldExpression><![CDATA[$F{Telefono1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="0" width="65" height="20" uuid="b12e2a27-49d7-410e-97d1-75f8776f253a"/>
+				<textFieldExpression><![CDATA[$F{Telefono2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="0" width="100" height="20" uuid="d61424ec-4b44-4eeb-a68d-c621d3a33554"/>
+				<textFieldExpression><![CDATA[$F{Email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="574" y="0" width="178" height="20" uuid="a4ecf3bc-3c15-4ffd-9979-2bf25771793c"/>
+				<textFieldExpression><![CDATA[$F{Direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="711" y="2" width="41" height="20" uuid="ee0e208d-fd2d-422f-b3b3-da01fc42615a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="3" width="100" height="20" uuid="a7554fc9-a30e-43ce-bd2e-7501fd9953dc"/>
+				<textFieldExpression><![CDATA[$V{idProveedor_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="2" width="115" height="20" uuid="dd4a7a85-e954-44a4-b4e4-a693356f72a5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total De Proveedores:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

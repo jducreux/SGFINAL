@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8964fa86-302d-4243-8444-6eb5d7feb53c">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cuent" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechainicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechafin" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT IdNotas,Cuenta,Fecha,Tipo,Monto,Detalle FROM notas WHERE Cuenta=$P{cuent} and Fecha between $P{fechainicio} and $P{fechafin} Order By Tipo;]]>
+	</queryString>
+	<field name="IdNotas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cuenta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fecha" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Monto" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Detalle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="IdNotas_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{IdNotas}]]></variableExpression>
+	</variable>
+	<variable name="Monto_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{Monto}]]></variableExpression>
+	</variable>
+	<variable name="Monto_2" class="java.lang.Double" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{Monto}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="-1" y="2" width="572" height="74" uuid="57b77957-f64a-4a6f-882f-5e8593670c72"/>
+			</rectangle>
+			<image>
+				<reportElement x="7" y="1" width="55" height="43" uuid="a01945f2-f644-43ea-9dfe-2502ce4f5b9e"/>
+				<imageExpression><![CDATA["C:\\SG-SOFT\\imagen\\photo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="199" y="33" width="152" height="20" uuid="fb7491b8-a3e7-480c-a7c4-2833c7f17ff4"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[LISTADO DE NOTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="56" width="176" height="20" uuid="85c51b6c-2be4-4312-86ae-854f050b7496"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Vía Carretera Panamericana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="29" width="131" height="20" uuid="393ef68c-f472-486d-9591-7a7d92777ae7"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono: 959-0112]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="55" width="214" height="20" uuid="ef401c39-4d3b-4969-80b5-578daaf42df1"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Ing. Maximino Cedeño: 6676-5918]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="86" y="2" width="426" height="22" uuid="904f402e-1662-4612-9a35-b34de21fac7b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SUBASTA GANADERA VERAGUENSE, S.A.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="2" y="1" width="569" height="20" uuid="91fcd250-4db9-4302-9686-c92a77cfe6df"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="274" y="2" width="31" height="20" uuid="bf48f048-4d18-401b-86e3-3977c7fea552"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[hasta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="3" width="176" height="20" uuid="41046f31-28f4-4736-9d67-ebbe10af7386"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rango De Fechas Del Informe:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="199" y="3" width="75" height="20" uuid="da1ab9eb-a11a-4c33-a076-fd5d12269c00"/>
+				<textFieldExpression><![CDATA[$P{fechainicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="3" width="100" height="20" uuid="b5ee347e-b140-4b36-bf7a-e061134c70be"/>
+				<textFieldExpression><![CDATA[$P{fechafin}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="4" width="567" height="1" uuid="44d247ed-09bc-49a7-bb4d-fe31a869460e"/>
+			</line>
+			<line>
+				<reportElement x="2" y="23" width="567" height="1" uuid="dcce5c5f-4f2c-4d50-b181-d0ac8d43d648"/>
+			</line>
+			<staticText>
+				<reportElement x="7" y="6" width="55" height="17" uuid="9af9ccc9-71a7-4462-9184-f06ff14a9320"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="4" width="100" height="20" uuid="93fded7c-db30-4637-8ef0-4a564fe75401"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cuenta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="205" y="5" width="36" height="20" uuid="bb61f5b0-64d8-47ae-81d5-0ac44ea35edc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="3" width="39" height="20" uuid="aaa1c6d0-4eaa-4d9c-ac61-0a81d497e682"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="4" width="100" height="20" uuid="1cd83ae4-4f84-4396-be89-0e7a12ef07aa"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detalle]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="7" y="2" width="55" height="20" uuid="0d48d3fb-70ce-4c8e-ad1b-dd0ccb98c009"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="2" width="115" height="20" uuid="a8318226-cfd9-4141-9820-fed73651d2b2"/>
+				<textFieldExpression><![CDATA[$F{Cuenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="205" y="2" width="69" height="20" uuid="54072571-5635-463c-a33f-5cde7b9163f3"/>
+				<textFieldExpression><![CDATA[$F{Tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="2" width="56" height="20" uuid="8a2e0ab8-685b-4a93-ac46-cf552345e117"/>
+				<textFieldExpression><![CDATA[$F{Monto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="357" y="2" width="212" height="20" uuid="c281a922-26c9-4971-b55f-8a8d67c672f9"/>
+				<textFieldExpression><![CDATA[$F{Detalle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="4" width="100" height="20" uuid="204cf516-f0b8-4ebf-87f5-f244c56c5338"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total De Notas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="4" width="100" height="20" uuid="4713d13d-dc20-4080-bc84-35b473c343a6"/>
+				<textFieldExpression><![CDATA[$V{IdNotas_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="214" y="3" width="71" height="20" uuid="9cb1e8b8-24f8-47c4-93ae-d235c70a276d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto Total:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="285" y="3" width="72" height="20" uuid="8ce469f9-04a4-43b6-828f-a17b0a968654"/>
+				<textFieldExpression><![CDATA[$V{Monto_2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

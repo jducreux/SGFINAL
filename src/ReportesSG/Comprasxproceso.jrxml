@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2dd70701-4d92-4a36-a540-f65ca19d744f">
+	<parameter name="fechainicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechafin" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from facturas where Fecha between $P{fechainicio} and $P{fechafin}]]>
+	</queryString>
+	<field name="idFacturas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Monto" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CodCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Saldo" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalAnimales" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalHembras" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalMachos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalTerneros" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalTerneras" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalNovillos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalNovillas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalVacas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalYeguas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalCaballos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalVacaCeba" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalToros" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PPromHembras" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PPromMachos" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="TotalAnimales_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{TotalAnimales}]]></variableExpression>
+	</variable>
+	<variable name="TotalVacas_1" class="java.lang.Integer" resetType="Group" resetGroup="GRUPO" calculation="Sum">
+		<variableExpression><![CDATA[$F{TotalVacas}]]></variableExpression>
+	</variable>
+	<group name="GRUPO">
+		<groupExpression><![CDATA[$F{idFacturas}]]></groupExpression>
+		<groupHeader>
+			<band height="114">
+				<staticText>
+					<reportElement x="45" y="10" width="100" height="20" uuid="dc1fb0a7-858e-4a3f-8e29-6c27b86062fa"/>
+					<text><![CDATA[TOTAL DE RESES]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="171" y="10" width="100" height="20" uuid="076e7f06-4155-4f83-9186-1b4b16415756"/>
+					<text><![CDATA[TOTAL HEMBRAS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="293" y="10" width="100" height="20" uuid="69a2b5e3-bf61-4844-9a4d-52689d6d8067"/>
+					<text><![CDATA[TOTAL MACHOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="416" y="10" width="100" height="20" uuid="27658942-5456-4a82-967c-ec6e0020b215"/>
+					<text><![CDATA[TOTAL TERNEROS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="319" y="68" width="100" height="20" uuid="d61cbc51-476e-47f4-ae55-7bdbfe1ecd2f"/>
+					<text><![CDATA[Terneros]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="68" width="42" height="20" uuid="899fef18-dcc5-49b0-b2f8-bf2c76dadb8a"/>
+					<text><![CDATA[Vacas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="96" y="68" width="39" height="20" uuid="8be087af-1e83-48e4-8ecc-19b505cef558"/>
+					<text><![CDATA[Toros]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="162" y="68" width="54" height="20" uuid="9485a118-5537-4f77-a742-5dfa4e336f8b"/>
+					<text><![CDATA[Novillos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="242" y="68" width="63" height="20" uuid="97566079-b5f6-4a73-89d4-5a40a99253ba"/>
+					<text><![CDATA[Novillas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="374" y="68" width="50" height="20" uuid="82d12537-2c37-4c39-b931-95cff296e977"/>
+					<text><![CDATA[Terneras]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="446" y="68" width="62" height="20" uuid="9c0a0ab5-9855-455f-b235-4f6d9165ff98"/>
+					<text><![CDATA[Caballos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="513" y="68" width="44" height="20" uuid="e98def9a-4cf0-48fa-b2c7-5d3a2002266a"/>
+					<text><![CDATA[Yeguas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="346" y="48" width="100" height="20" uuid="048584cc-26cd-46db-a9dd-698d6f2b7cfe"/>
+					<text><![CDATA[TotalVacaCeba]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="103">
+				<rectangle radius="10">
+					<reportElement x="10" y="24" width="547" height="42" uuid="fdf29c13-b74c-4a4b-86de-665d8364edbd"/>
+				</rectangle>
+				<textField>
+					<reportElement x="20" y="66" width="100" height="20" uuid="135f7bd7-d90f-45e5-b9ca-9c4ebd077cf6"/>
+					<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GRUPO">
+					<reportElement x="20" y="30" width="100" height="20" uuid="56706484-d708-4b89-868a-3f3be5b1f350"/>
+					<textFieldExpression><![CDATA[$V{TotalVacas_1}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Column">
+					<reportElement x="188" y="30" width="100" height="20" uuid="9a4500f7-ea21-4992-887c-a184bbdd4ad4"/>
+					<textFieldExpression><![CDATA[$V{TotalAnimales_1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="2" width="568" height="76" uuid="9647153f-476d-4656-a5b0-faff6c761ef7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="101" y="58" width="403" height="20" uuid="7f7bddea-fe17-48db-b16e-3612dd704ff3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESUMEN DE COMPRAS POR FECHA DE PROCESO DEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="12" width="430" height="43" uuid="06357f84-574b-4b96-a7fc-d56e1152f09f"/>
+				<textElement>
+					<font fontName="Calibri" size="24" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[SUBASTA GANADERA VERAGUENSE, S.A.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="20" y="7" width="218" height="63" uuid="a6ae036d-ba42-4650-a2fb-c7643bb969e0"/>
+				<imageExpression><![CDATA["C:\\SG-SOFT\\imagen\\LOGO.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="96" y="43" width="450" height="20" uuid="5de4bc5b-7113-48b1-a451-1f69acb35f77"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vía Carretera Panamericana        Telefono: 959-0112     Ing. Maximino Cedeño    Cel. 66765918]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="188" y="12" width="230" height="20" uuid="ff8fa5be-2ad4-4b83-ad46-04a84a5752a6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[T O T A L   D E   A N I M A L E S]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="73" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

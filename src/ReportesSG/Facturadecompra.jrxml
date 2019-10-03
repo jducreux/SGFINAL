@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="691" pageHeight="396" columnWidth="635" leftMargin="28" rightMargin="28" topMargin="20" bottomMargin="20" uuid="6edc4e6d-03d7-41b9-9f94-22da72cad250">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nfactura" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select   f.idFacturas, f.Fecha,f.CodCliente,f.Monto,f.TotalAnimales,f.TotalHembras,f.TotalMachos,f.TotalTerneros,f.PPromHembras,f.PPromMachos,c.Nombre,c.Apellido,c.Cedula,fd.idAnimal,fd.Color,fd.Tipo,fd.CodVendedor,fd.Ferrete,fd.ferre2,fd.ferre3,fd.Precio,fd.Peso,fd.TotalBruto from facturas f, clientes c , facturas_detalle fd WHERE f.CodCliente=c.idClientes and f.idFacturas=fd.idFactura and fd.idFactura=$P{nfactura};]]>
+	</queryString>
+	<field name="idFacturas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CodCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Monto" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalAnimales" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalHembras" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalMachos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalTerneros" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PPromHembras" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PPromMachos" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cedula" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idAnimal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Color" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CodVendedor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ferrete" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ferre2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ferre3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Precio" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Peso" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalBruto" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="Peso_1" class="java.lang.Double" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{Peso}]]></variableExpression>
+	</variable>
+	<variable name="Peso_2" class="java.lang.Double" resetType="Page" calculation="Average">
+		<variableExpression><![CDATA[$F{Peso}]]></variableExpression>
+	</variable>
+	<variable name="TotalHembras_1" class="java.lang.Integer" resetType="Page" calculation="Average">
+		<variableExpression><![CDATA[$F{TotalHembras}]]></variableExpression>
+	</variable>
+	<variable name="TotalMachos_1" class="java.lang.Integer" resetType="Page" calculation="Average">
+		<variableExpression><![CDATA[$F{TotalMachos}]]></variableExpression>
+	</variable>
+	<variable name="TotalBruto_1" class="java.lang.Double" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{TotalBruto}]]></variableExpression>
+	</variable>
+	<variable name="TotalBruto_2" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{TotalBruto}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="552" y="9" width="61" height="19" uuid="4ba369df-3f3f-4c38-b83e-da4c867eab38"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="552" y="28" width="61" height="15" uuid="f300ced1-b307-4823-9fe8-b34374ebc62b"/>
+				<textFieldExpression><![CDATA[$F{CodCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="44" width="67" height="20" uuid="38c29145-57d8-46f4-a3ec-9d945add552d"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="44" width="107" height="20" uuid="0efe5a6f-3548-48f6-9c31-30548ca3fd63"/>
+				<textFieldExpression><![CDATA[$F{Apellido}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="¤ #,##0.00">
+				<reportElement x="384" y="48" width="88" height="20" uuid="c3bbb5ef-d60b-4d7e-a885-8bc46e48e0a4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TotalBruto_2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="6" width="37" height="20" uuid="c2597c3d-8189-40f6-9ea1-cca08f342dab"/>
+				<textFieldExpression><![CDATA[$F{TotalAnimales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="7" width="43" height="20" uuid="e280c3f3-3a93-4b39-99da-b8fc44f16e09"/>
+				<textFieldExpression><![CDATA[$F{TotalHembras}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="7" width="28" height="20" uuid="ed450412-8820-4b18-85db-5693e305a24e"/>
+				<textFieldExpression><![CDATA[$F{TotalMachos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="515" y="7" width="37" height="20" uuid="b78215ba-4e84-4606-945f-4b92c2661243"/>
+				<textFieldExpression><![CDATA[$F{TotalTerneros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="-15" width="174" height="15" uuid="ed3d43a5-856a-421b-9c82-b50d79b953c7"/>
+				<textFieldExpression><![CDATA[$F{Cedula}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="56" y="0" width="32" height="20" uuid="8d91aced-97bd-477f-b54a-810b2db4b80d"/>
+				<textFieldExpression><![CDATA[$F{idAnimal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="0" width="47" height="20" uuid="e211330a-d874-44b1-afe4-d74965a40fdf"/>
+				<textFieldExpression><![CDATA[$F{Color}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="0" width="42" height="20" uuid="bef01e16-0c6f-45c8-88e1-fddf222a9b0c"/>
+				<textFieldExpression><![CDATA[$F{Tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="0" width="39" height="20" uuid="84b66e78-fe73-4e1d-8451-c4c1ef457969"/>
+				<textFieldExpression><![CDATA[$F{CodVendedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="0" width="23" height="20" uuid="5df9a720-9b5e-4707-af4e-871db6e14036"/>
+				<textFieldExpression><![CDATA[$F{Ferrete}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="0" width="20" height="20" uuid="ed443d48-8836-45e2-be90-e5e45e808efa"/>
+				<textFieldExpression><![CDATA[$F{ferre2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="0" width="23" height="20" uuid="b9dc1fae-3fdf-4da8-9e32-3d208f35980e"/>
+				<textFieldExpression><![CDATA[$F{ferre3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="0" width="54" height="20" uuid="3068f188-6add-4be1-8109-c66a813512cd"/>
+				<textFieldExpression><![CDATA[$F{Precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="489" y="0" width="47" height="20" uuid="84e9d5ff-8210-4980-b8c4-e3f5a32698f2"/>
+				<textFieldExpression><![CDATA[$F{Peso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="578" y="0" width="52" height="20" uuid="39129f52-b1a0-4ff8-ac5e-1d9abde973d4"/>
+				<textFieldExpression><![CDATA[$F{TotalBruto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="23" splitType="Stretch">
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="562" y="0" width="68" height="20" uuid="b71c1709-2abb-4fcc-9c25-ef3b32098126"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TotalBruto_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="2" width="53" height="20" uuid="e357e5cb-fa86-4286-bc62-a7dde6341923"/>
+				<textFieldExpression><![CDATA[$V{Peso_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="2" width="56" height="20" uuid="e4962293-30f1-4eb5-ab3b-b5293de2e31c"/>
+				<textFieldExpression><![CDATA[$F{PPromHembras}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="56" y="-21" width="56" height="20" uuid="5ee018a9-0113-4a51-b1c1-287b0641812f"/>
+				<textFieldExpression><![CDATA[$V{Peso_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="-21" width="61" height="20" uuid="1c5e7183-d634-45ed-801d-606da8c9bafd"/>
+				<textFieldExpression><![CDATA[$F{PPromMachos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
